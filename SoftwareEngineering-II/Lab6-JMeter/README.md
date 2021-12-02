@@ -1,0 +1,1 @@
+# Laboratotio 6: Pruebas de Rendimiento con JMeter
