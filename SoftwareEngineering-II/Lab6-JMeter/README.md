@@ -33,7 +33,7 @@ BlazeMeter requiere que un Navegador web se encuentre instalado para poder corre
 
 Usaremos BlazeMeter para grabar nuestra interacción con la AppWeb, la inteacción es similar a Selenium, pero con una interfaz más amigable.
 
-* **Iniciar la prueba**:
+* Iniciar la prueba:
 ![Filmador](docs/blaze.png)
 
 1.Debemos mantener el navegador abierto y blaze abierto mientras ejecutamos todos los pasos que serán grabados en el archivo de registro.
@@ -68,4 +68,44 @@ La prueba constará de cuatro páginas:
 * Salir del dashboard con signUp
 ![signup](docs/signout.png)
 
+## JMeter
 
+después de importar el archivo `.jmx` generado por BlazeMeter en JMeter.
+
+### 1. El archivo `.jmx` configurará todas las pruebas, URL, PHATS y componentes
+
+![Pruebas configuradas](docs/initJmeter.png)
+
+### 2. Configurar el grupo de Threads 
+
+![Grupo de Threads](docs/groupthread.png)
+
+* Configurar el grupo de Threads para 10 usuaarios y 10 ciclos
+
+![configuracion de threads](docs/numuserscicles.png)
+
+### 3. Configurar el listener de los resultados
+
+* Configurar el árbol de resultados
+
+![Arbol de resultados](docs/listentree.png)
+
+* Configurar el Grafico de resultados para hacerlo más fácil de interpretar
+
+![Grafico de resultados](docs/grahresults.png)
+
+### 4. Ejecutar la prueba
+
+* Ejecutar la prueba
+
+![Ejecutar prueba](docs/starttest.png)
+
+## Resultados
+
+* Árbol de resultados
+
+![Arbol de resultados](docs/treeresults.png)
+
+* Grafico de resultados
+
+![Grafico de resultados](docs/GAA.png)
