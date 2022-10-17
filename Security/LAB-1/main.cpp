@@ -8,7 +8,6 @@ int main(int, char**) {
   
   sustituionsInCharacters(text);
 
-  
   //cout << text << '\n';
 
   deleteacents(text);
@@ -23,16 +22,22 @@ int main(int, char**) {
 
   //cout << text << '\n';
 
+
+  /*
   int *frecuency = new int[25];
 
   generateFrecuencyTable(text, frecuency);
+  cout << "FRECUENCY:\n";
+  for (int i = 0; i <= 25; ++i) {
+    char w = i + 65;
+    cout << w << ' ' << frecuency[i] << '\n';
+  }*/
 
 
-  findTriagramsForKasiski(text);
+  //findTriagramsForKasiski(text);
 
 
   //textToUnicode(text); 
-
   
   //cout << text << '\n';
 
@@ -40,19 +45,13 @@ int main(int, char**) {
 
   //cout << text;
 
-  cout << text.size() << '\n';
-
+  //cout << text.size() << '\n';
 
   putCharacterUsingPattern(text);
 
-  cout << text.length() << '\n';
-
-  
+  //cout << text.length() << '\n';
 
   cout << text << '\n';
-
-
-
 
   return 0;
 }
