@@ -3,6 +3,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+def plot_figure(k_iter, m, n, u_mat, A, B):
+  print(f'ITERACIONES: {k_iter} \n')
+  x = np.array([i + 1 for i in range (m + 2)])
+  y = np.array([i + 1 for i in range (n + 2)])
+  X_m, Y_m = np.meshgrid(x, y)
+  print(f'U_MAT: {u_mat}\n MALLA X: {X_m}\n MALLA Y: {Y_m}\n')
+
+  plot_img = plt.figure(figsize = (A, B))
+  img_ax = plt.axes(projection = '3d')
+  img_hm = img_ax.plot_surface(X_m, Y_m, u_mat, cmap = plt.get_cmap('winter'))
+  plot_img.colorbar(img_hm, ax = img_ax, shrink = 0.5, aspect = 5)
+  img_ax.set_title('LA PLACE')
+  plt.show()
+
 def la_place_with_condition_f(
   ua, ub, uc, ud, 
   n, m, h, error) -> None:
@@ -44,19 +58,7 @@ def la_place_with_condition_f(
   if convergent is False:
     print("NO CONVERGE!\n")
   else:
-    print(f'ITERACIONES: {k_iter} \n')
-    x = np.array([i + 1 for i in range (m + 2)])
-    y = np.array([i + 1 for i in range (n + 2)])
-    X_m, Y_m = np.meshgrid(x, y)
-    print(f'U_MAT: {u_mat}\n MALLA X: {X_m}\n MALLA Y: {Y_m}\n')
-
-    plot_img = plt.figure(figsize = (14, 9))
-    img_ax = plt.axes(projection = '3d')
-    img_hm = img_ax.plot_surface(X_m, Y_m, u_mat, cmap = plt.get_cmap('winter'))
-    plot_img.colorbar(img_hm, ax = img_ax, shrink = 0.5, aspect = 5)
-    img_ax.set_title('LA PLACE')
-    plt.show()
-
+    plot_figure(k_iter=k_iter, m=m, n=n, u_mat=u_mat, A=14, B=9)
 
 # Example 
 la_place_with_condition_f(80, 0, 20, 300, 4, 4, 100, 1)
