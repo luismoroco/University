@@ -1,0 +1,6 @@
+airflow users create \
+    --username admin \
+    --firstname luis \
+    --lastname moroco \
+    --role Admin \
+    --email lmorocoramos@gmail.com

@@ -1,13 +1,41 @@
-#include <iostream>
-#include <stdio.h>
-#include <string.h>
+#include <bits/stdc++.h>
+using namespace std;
 
-const int N = 1 << 5;
-char buffer[N];
+constexpr int N = 1 << 5;
 int r, c, i, j;
 
 int main(int, char**) {
-  scanf("%s", &buffer);
+  string b;
+  getline(cin, b);
+
+  // white space 
+
+  for (int i = 0; i < b.length(); ++i) {
+    if (b[i] == ' ') 
+      b.erase(i, 1);
+  }
+
+  // Upp
+
+  while (b.find("ñ") != string::npos) {
+    auto i = b.find("ñ");
+    b.erase(i, 2);
+    b.insert(i, "*");
+  }
+
+  for (int i = 0; i < b.length(); ++i)
+    b[i] = (b[i] == '*') ? 'n' : b[i];
+
+  char *buffer = new char[b.length()];
+  for (int i = 0; i < b.length(); ++i)
+    buffer[i] = toupper(b[i]);
+  
+
+  // replace
+
+  for (int i = 0; i < b.length(); ++i)
+    buffer[i] = b[i];
+  
 
   scanf("%d %d", &r, &c);
   int pr = r, pc = c;
@@ -45,6 +73,8 @@ int main(int, char**) {
       for (i = c - 1; i >= 0; --i)
         printf("%c", cif[pr][i]);
   }
+
+  printf("\n");
 
   return 0;
 }

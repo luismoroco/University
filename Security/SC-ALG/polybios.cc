@@ -1,22 +1,35 @@
-#include <stdio.h>
-#include <string.h>
+#include <bits/stdc++.h>
+using namespace std;
 
-const int N = 1 << 5;
-char buffer[N];
+constexpr int N = 1 << 10;
 
 int f(int p) {
-  return p > 73 ? p - 66 : p - 65;
+  return p > 73 ? 
+    p - 66 : p - 65;
 }
 
 int main(int, char**) {
   char *mat = "ABCDEFGHIKLMNOPQRSTUVWXYZ", *index = "ABCDE";
 
-  scanf("%s", &buffer);
-  int len = strlen(buffer);
+  string buffer; 
+  getline(cin, buffer);
+
+  int len = buffer.size();
+
+  cout << "CIF: " << buffer << '\n';
+
+  // Vars
+  int i, j, x, y, d;
+  
+  // Mayus
+
+  for (i = 0; i < len; ++i) 
+    buffer[i] = toupper(buffer[i]);
+
+  cout << "CIF: " << buffer << '\n';
 
   // Cifrar 
 
-  int i, j, x, y, d;
   char *cifr = new char[len * 2];
   for (d = 0, i = 0; i < len; ++i, d += 2) {
     j = f(buffer[i]);
@@ -24,7 +37,7 @@ int main(int, char**) {
     cifr[d] = index[x]; cifr[d+1] = index[y];
   }
 
-  printf("CIFRADO = %s\n", cifr);
+  cout << "CIFRADO: " << cifr << '\n';
 
   // Descifrar
 
@@ -34,7 +47,7 @@ int main(int, char**) {
     desc[d] = mat[x * 5 + y];
   }
 
-  printf("DESCIFRADO = %s\n", desc);
+  cout << "DESCIFRADO: " << desc << '\n';
 
   delete[] cifr;
   delete[] desc;
