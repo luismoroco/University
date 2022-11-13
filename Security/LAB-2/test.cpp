@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-  string x = "Ñ"
+  string x = "Ñ";
 
   return 0;
 }
