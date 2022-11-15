@@ -59,7 +59,7 @@ def calor_propagation_f(
   if convergent is False:
     print("NO CONVERGE!\n")
   else:
-    plot_figure(k_iter=k_iter, m=m, n=n, u_mat=u_mat, A=14, B=9)
+    plot_figure(k_iter=k_iter, m=m, n=n, u_mat=u_mat, A=10, B=9)
 
 # Example 
 calor_propagation_f(80, 0, 20, 300, 4, 4, 100, 1, 8)

@@ -152,4 +152,30 @@ void cifrVignere(string &text, string key) {
     }
     ++itKey;
   }
+
+  for (i = 0; i < text.length(); ++i)
+    if (text[i] == '*') {
+      text.erase(i, 1);
+      text.insert(i, "Ñ");
+    }
+}
+
+void desciVginere(string &text, string key) {
+  while (text.find("Ñ") != string::npos) {
+    auto i = text.find("Ñ");
+    text.erase(i, 2);
+    text.insert(i, "*");
+  }
+    
+  int itKey = 0, i, tmK = key.size();
+  for (i = 0; i < text.length(); ++i) {
+    if (itKey == tmK) {
+      itKey = 0;
+      text[i] = alpha[getIndex(text[i])-getIndex(key[itKey])];
+    } else {
+      text[i] = alpha[(getIndex(text[i])-getIndex(key[itKey])) % 27];
+    }
+    ++itKey;
+  }
+
 }

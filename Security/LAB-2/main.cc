@@ -1,7 +1,7 @@
 #include "library.hpp"
 
 int main(int, char**) {
-  /* PRIMERA PARTE
+  /* PRIMERA PARTE 
   string buffer = getDataFromFile("Cesar.txt");
   deleteacents(buffer);
   deleteWhiteSpaceAndPoints(buffer);
@@ -17,12 +17,11 @@ int main(int, char**) {
 
   descifrarText(buffer);
 
-  cout << "DESCIFRADO => \n" << buffer << '\n';*/
+  cout << "DESCIFRADO => \n" << buffer << '\n';
 
-  
+  */
   
   // ----------------------
-
 
   
   string buffer = getDataFromFile("Cesar.txt");
@@ -36,7 +35,10 @@ int main(int, char**) {
   cifrVignere(buffer, "MEZCLADOR");
 
   cout << buffer << '\n';
+  
+  desciVginere(buffer, "MEZCLADOR");
 
+  cout << buffer << '\n';
 
   return 0;
 }
